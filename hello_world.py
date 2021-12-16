@@ -2343,5 +2343,461 @@ Napisz program zliczający liczbę unikalnych liczb wprowadzonych przez użytkow
 
 range, set, input
 
+dane = "1 2 3 1 2 3 12 4 5 19 28 37 102 736 2"
+
+dane = dane.split()
+
+dane2 = []
+for d in dane:
+    dane2.append(int(d))
+
+dane2
+
+[1, 2, 3, 1, 2, 3, 12, 4, 5, 19, 28, 37, 102, 736, 2]
+
+map?
+
+list(map(int, dane))
+
+[1, 2, 3, 1, 2, 3, 12, 4, 5, 19, 28, 37, 102, 736, 2]
+
+dane = [int(x) for x in dane]
+
+unique = set(dane)
+
+parzyste_0_100 = set(range(2, 101, 2))
+
+unique
+
+{1, 2, 3, 4, 5, 12, 19, 28, 37, 102, 736}
+
+len(unique)
+
+11
+
+len(unique & parzyste_0_100)
+
+4
+
+Zadanie 15
+
+Napisz program, który posortuje liczby w tablicy przy wykorzystaniu algorytmu “sortowanie przez wybieranie”.
+
+liczby = [5, 2, 1, 4, 3]
+
+for i in range(len(liczby)):
+    i_min = i
+    for j in range(i+1, len(liczby)):
+        if liczby[j] < liczby[i_min]:
+            i_min = j
+    liczby[i], liczby[i_min] = liczby[i_min], liczby[i]
+
+print(liczby)
+
+[1, 2, 3, 4, 5]
+
+Wyrażenia listowe i podobne
+
+[x for x in range(10)]
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+[x ** 2 for x in range(10)]
+
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+[x ** 2 for x in range(10) if x % 2 != 0]
+
+[1, 9, 25, 49, 81]
+
+[[x * j for x in range(10)] for j in range(10)]
+
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+ [0, 2, 4, 6, 8, 10, 12, 14, 16, 18],
+ [0, 3, 6, 9, 12, 15, 18, 21, 24, 27],
+ [0, 4, 8, 12, 16, 20, 24, 28, 32, 36],
+ [0, 5, 10, 15, 20, 25, 30, 35, 40, 45],
+ [0, 6, 12, 18, 24, 30, 36, 42, 48, 54],
+ [0, 7, 14, 21, 28, 35, 42, 49, 56, 63],
+ [0, 8, 16, 24, 32, 40, 48, 56, 64, 72],
+ [0, 9, 18, 27, 36, 45, 54, 63, 72, 81]]
+
+{x for x in range(10)}
+
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+{x: x**3 for x in range(10)}
+
+{0: 0, 1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343, 8: 512, 9: 729}
+
+(x for x in range(10))  # wyrazenie generatorowe
+
+<generator object <genexpr> at 0x000002C2CD5D2110>
+
+Zadanie 16
+
+Wyrażenia listowe i inne W sesji interaktywnego środowiska stwórz następujące struktury danych korzystając ze skróconej wersji zapisu:
+
+    listę zawierającą liczby zmiennoprzecinkowe od 0.0 do 1.0 z krokiem 0.1
+    zbiór tupli zawierających 3 elementy - daną liczbę, jej kwadrat i jej sześcian - w przedziale od -10 do 10
+    słownik mapujący napisy na ich długość powstały ze zbioru napisów
+
+[x/10 for x in range(11)]
+
+[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+Funkcje
+
+def nazwa_funkcji():
+    ... # cialo funkcji
+
+nazwa_funkcji()
+
+def hello_world():
+    return "Hello World"
+
+hello_world()
+
+'Hello World'
+
+def hello(text):
+    return "Hello " + text
+
+hello("Rafał")
+
+'Hello Rafał'
+
+hello()
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/2674044599.py in <module>
+----> 1 hello()
+
+TypeError: hello() missing 1 required positional argument: 'text'
+
+def sumator(a, b):
+    return a + b
+
+sumator(1, 2)
+
+3
+
+sumator(1)
+sumator(1, 2, 3)
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/2714852031.py in <module>
+----> 1 sumator(1)
+      2 sumator(1, 2, 3)
+
+TypeError: sumator() missing 1 required positional argument: 'b'
+
+def hello(text="World"):
+    return "Hello " + text
+
+hello()
+
+'Hello World'
+
+hello("Rafał")
+
+'Hello Rafał'
+
+def hello(imie, nazwisko=""):
+    if nazwisko:
+        text = f"Hello {imie} {nazwisko}"
+    else:
+        text = f"Hello {imie}"
+    return text
+
+hello("Paweł")
+
+'Hello Paweł'
+
+hello("Paweł", "Biała")
+
+'Hello Paweł Biała'
+
+hello(imie="Rafał")
+
+'Hello Rafał'
+
+hello(imie="Rafał", nazwisko="Korzeniewski")
+
+'Hello Rafał Korzeniewski'
+
+hello(nazwisko="Korzeniewski", imie="Rafał")
+
+'Hello Rafał Korzeniewski'
+
+Zadanie 17
+
+Napisz funkcję sprawdzającą, czy dane liczba jest liczbą pierwszą. Przykład użycia:
+
+>>> czy_jest_pierwsza(10)
+False
+>>> czy_jest_pierwsza(17)
+True
+
+def czy_jest_pierwsza(liczba):
+    if liczba == 1: return False
+    for i in range(2, liczba):
+        if liczba % i == 0:
+            return False
+    return True
+        
+    
+    
+assert czy_jest_pierwsza(2) is True
+assert czy_jest_pierwsza(3) is True
+assert czy_jest_pierwsza(11) is True
+assert czy_jest_pierwsza(6) is False
+
+# czy_jest_pierwsza(1)
+assert czy_jest_pierwsza(1) is False
+
+assert 1 == 0
+
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/351952524.py in <module>
+----> 1 assert 1 == 0
+
+AssertionError: 
+
+Zadanie 18
+
+Napisz funkcję zwracającą zbiór wszystkich znaków występujących w napisie więcej niż zadana liczba razy. Przykład użycia:
+
+>>> wiecej_niz('ala ma kota a kot ma ale', 3)
+{'a', ' '}
+
+>>> wiecej_niz('ala ma kota a kot ma ale', 6)
+
+{'a'}
+
+def wiecej_niz(text: str, prog: int) -> set:
+    """Zwraca zbior znakow wystepujacych w text wiece niz prog razy
+    >>> wiecej_niz("", 4)
+    {}
+    """
+    result = set()
+    for znak in set(text):
+        if text.count(znak) > prog:
+            result.add(znak)
+    return result
+
+
+assert wiecej_niz("", 4) == set()
+assert wiecej_niz("aaa", 1) == {"a"}
+
+help(wiecej_niz)
+pytest
+
+pip install pytest
+
+uzycie
+
+$ pytest 
+
+$ pytest nazwa_modulu
+
+!dir
+
+ Volume in drive C has no label.
+ Volume Serial Number is C810-6CAC
+
+ Directory of C:\Users\Szkolenie_03\imperiumpythonbootcamp
+
+16.12.2021  13:56    <DIR>          .
+16.12.2021  13:56    <DIR>          ..
+15.12.2021  11:03                40 .gitignore
+16.12.2021  13:55    <DIR>          .idea
+15.12.2021  09:44    <DIR>          .ipynb_checkpoints
+15.12.2021  11:12    <DIR>          .mypy_cache
+15.12.2021  13:50               141 debugger_przyklad.py
+15.12.2021  09:43             9˙596 dzien_1.md
+16.12.2021  08:13             8˙896 dzien_2.md
+15.12.2021  11:20                53 hello_world.py
+15.12.2021  10:47                21 hello_world.py.bak
+16.12.2021  10:54               238 slownik_example.py
+16.12.2021  13:56           188˙442 Szkolenie Python.ipynb
+15.12.2021  12:03               247 zadanie_02.py
+15.12.2021  12:26               334 zadanie_03.py
+15.12.2021  12:51               246 zadanie_04.py
+15.12.2021  13:26               431 zadanie_05.py
+15.12.2021  13:59                61 zadanie_06.py
+15.12.2021  14:12               199 zadanie_07.py
+15.12.2021  14:50               667 zadanie_08.py
+16.12.2021  10:13               222 zadanie_09.py
+16.12.2021  09:39               221 zadanie_10.py
+16.12.2021  12:32               246 zadanie_15.py
+15.12.2021  11:28                62 zadanie_zmienne_01.py
+              19 File(s)        210˙363 bytes
+               5 Dir(s)  78˙602˙829˙824 bytes free
+
+def foo(a, b, k=1, j=2):
+    pass
+
+foo(1, 2)
+
+def foo(*args):
+    print(args)
+    
+foo()
+foo(1, 2, 3, 4)
+
+()
+(1, 2, 3, 4)
+
+def foo(a, b, *args): pass
+
+def foo(a, b, *args, x='a'): pass
+
+def foo(a, b, x='a', *args):
+    print(a, b, x, args)
+
+foo(1, 2)
+
+1 2 a ()
+
+foo(1, 2, 3)
+
+1 2 3 ()
+
+foo(1, 2, 3, 4, 5, 6)
+
+1 2 3 (4, 5, 6)
+
+def foo(x=a): pass
+
+a
+
+2
+
+foo.__defaults__
+
+(2,)
+
+del a
+
+a
+
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/2167009006.py in <module>
+----> 1 a
+
+NameError: name 'a' is not defined
+
+def foo('a'): pass
+
+  File "C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/337924746.py", line 1
+    def foo('a'): pass
+            ^
+SyntaxError: invalid syntax
+
+def foo(a, b, *args, **kwargs):
+    print(a, b, args, kwargs)
+    
+    
+
+foo(1, 2)
+
+1 2 () {}
+
+foo(1, 2, k=10)
+
+1 2 () {'k': 10}
+
+foo(1, 2, 3, 4, x=10, y=20)
+
+1 2 (3, 4) {'x': 10, 'y': 20}
+
+a, b, *_ = 1, 2, 3, 4, 5, 6 
+
+a, b, *args = 1, 2, 3, 4, 5, 6 
+
+a, b
+
+(1, 2)
+
+_
+
+[3, 4, 5, 6]
+
+_ = print
+
+_("10")
+
+10
+
+def sumator(a, b, print_result=False):
+    result = a + b
+    if print_result: 
+        print("wejscie: ", a, b, "print_result: ", print_result)
+        print("wynik: ", result)
+    return result
+
+sumator(1, 2, 1)
+sumator(1, 2, print_result=1)
+
+wejscie:  1 2 print_result:  1
+wynik:  3
+wejscie:  1 2 print_result:  1
+wynik:  3
+
+3
+
+def sumator(a, b, *, print_result=False):
+    result = a + b
+    if print_result: 
+        print("wejscie: ", a, b, "print_result: ", print_result)
+        print("wynik: ", result)
+    return result
+
+sumator(1, 2, 1)
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/2844898615.py in <module>
+----> 1 sumator(1, 2, 1)
+
+TypeError: sumator() takes 2 positional arguments but 3 were given
+
+sumator(1, 2, print_result=1)
+
+wejscie:  1 2 print_result:  1
+wynik:  3
+
+3
+
+Zadanie
+
+Napisz funkcję obliczającą liczbę znaków w zadanym napisie pomiędzy zadanymi znakami. Znaki, pomiędzy którymi ma odbywać się zliczanie, powinny być argumentami z wartościami domyślnymi - odpowiednio < i >. Nawiasy mogę być zagnieżdżone i mogą wystąpić wiele razy. Znaki pomiędzy zagnieżdżonymi nawiasami liczone są zgodnie z poziomem zagnieżdżenia. Przykład użycia:
+
+>>> policz_znaki('ala ma <kota> a kot ma ale')
+4
+>>> policz_znaki('ala [kota [a kot]] ma [ale]', '[', ']')
+18
+>>> policz_znaki('a <a<a<a>>>')
+6
+
+
+>>> policz_znaki('a <a<a<a>>>', "(", ")")
+0
+
+>>> policz_znaki("<a>") 
+1
+
+>>> policz_znaki("<<a>>") 
+2
+
+>>> policz_znaki("<<a>a>") 
+3
+
  
 
