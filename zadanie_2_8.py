@@ -1,6 +1,9 @@
-lista = [1, 1, 1, 2, 2, 2, 3, 1, 2, 3]
-licznik = 0
+lista = [9, 1, 6, 8, 4, 3, 2, 0]
 
-set(lista)
-for x in lista:
-
+for i in range(len(lista)):
+    i_min = i
+    for j in range(i+1, len(lista)):
+        if lista[j] < lista[i_min]:
+            i_min = j
+    lista[i], lista[i_min] = lista[i_min], lista[i]
+    print(lista)

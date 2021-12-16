@@ -1143,7 +1143,1205 @@ import random
 
 los = random.randint(1, 5)
 
+Kolekcje
+tuple - krotka
+
+dane = (1, 2, 3, "4", (1, 2, 3))
+
+type(dane)
+
+tuple
+
+dir(dane)
+
+['__add__',
+ '__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__getnewargs__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__mul__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__rmul__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'count',
+ 'index']
+
+dane.index("4")
+
+3
+
+dane.count(2)
+
+1
+
+dane.count(100)
+
+0
+
+dane.index(100)
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/397406526.py in <module>
+----> 1 dane.index(100)
+
+ValueError: tuple.index(x): x not in tuple
+
+dane
+
+(1, 2, 3, '4', (1, 2, 3))
+
+(1, 2, 3)
+#0, 1, 2 - indexy
+
+(1, 2, 3)
+
+# wybieranie z tupli
+
+dane[3]
+
+'4'
+
+dane[4]
+
+(1, 2, 3)
+
+dane[4][0]
+#(1, 2, 3)[0]
+
+1
+
+dane[-1]
+
+(1, 2, 3)
+
+dane[-2]
+
+'4'
+
+len(dane)
+
+5
+
+dane
+
+(1, 2, 3, '4', (1, 2, 3))
+
+# Slicing
+
+       # 0  1  2  3  4  5  6  7  8  9
+dane2 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+dane2[3:6]
+
+(4, 5, 6)
+
+dane2[4:]
+
+(5, 6, 7, 8, 9, 10)
+
+dane2[4:-1]
+
+(5, 6, 7, 8, 9)
+
+dane2[2::3]
+
+(3, 6, 9)
+
+dane2[::-1]
+
+(10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+
+tupla jest niemutowalna
+
+nie dodam do niej elementy nie usune z niej elementu
+
+moge utworzyc nowa tuple na podstawie starej
+
+x = (1, 2, 3) + (3, 4, 5)
+x
+
+(1, 2, 3, 3, 4, 5)
+
+x[]
+
+List - lista
+
+lista = [1, 2, 3, 4, 5]
+
+dir(lista)
+
+['__add__',
+ '__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__iadd__',
+ '__imul__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__mul__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__rmul__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'append',
+ 'clear',
+ 'copy',
+ 'count',
+ 'extend',
+ 'index',
+ 'insert',
+ 'pop',
+ 'remove',
+ 'reverse',
+ 'sort']
+
+x = lista.append(6)
+
+x is None
+
+True
+
+x = print("10")
+x is None
+
+10
+
+True
+
+lista
+
+[1, 2, 3, 4, 5, 6, 6]
+
+lista.reverse()
+
+lista
+
+[6, 6, 5, 4, 3, 2, 1]
+
+dane
+
+(1, 2, 3, '4', (1, 2, 3))
+
+dane_lista = list(dane)
+
+dane_lista
+
+[1, 2, 3, '4', (1, 2, 3)]
+
+x = [1, 2, 3]
+y = x
+
+x
+
+[1, 2, 3]
+
+x.append(4)
+
+x
+
+[1, 2, 3, 4]
+
+y
+
+[1, 2, 3, 4]
+
+id(x)
+
+3035689467648
+
+id(y)
+
+3035689467648
+
+y.append(7)
+
+x
+
+[1, 2, 3, 4, 7]
+
+y = x.copy() # y = x[:]
+
+x.append(8)
+
+x
+
+[1, 2, 3, 4, 7, 8]
+
+y
+
+[1, 2, 3, 4, 7]
+
+a = [1, 2]
+b = [3, 4, a]
+
+c = b.copy()
+
+c
+
+[3, 4, [1, 2]]
+
+a.append(1)
+
+b
+
+[3, 4, [1, 2, 1]]
+
+c
+
+[3, 4, [1, 2, 1]]
+
+import copy
+
+c = copy.deepcopy(b)
+
+c
+
+[3, 4, [1, 2, 1]]
+
+a.append(7)
+
+b
+
+[3, 4, [1, 2, 1, 7]]
+
+c
+
+[3, 4, [1, 2, 1]]
+
+funkcje = (print, input, dir, int, float)
+
+funkcje[3]()  # int()
+
+0
+
+print = 10
+
+print
+
+10
+
+print = __builtins__.print
+
+dir(__builtins__)
+
+['ArithmeticError',
+ 'AssertionError',
+ 'AttributeError',
+ 'BaseException',
+ 'BlockingIOError',
+ 'BrokenPipeError',
+ 'BufferError',
+ 'BytesWarning',
+ 'ChildProcessError',
+ 'ConnectionAbortedError',
+ 'ConnectionError',
+ 'ConnectionRefusedError',
+ 'ConnectionResetError',
+ 'DeprecationWarning',
+ 'EOFError',
+ 'Ellipsis',
+ 'EncodingWarning',
+ 'EnvironmentError',
+ 'Exception',
+ 'False',
+ 'FileExistsError',
+ 'FileNotFoundError',
+ 'FloatingPointError',
+ 'FutureWarning',
+ 'GeneratorExit',
+ 'IOError',
+ 'ImportError',
+ 'ImportWarning',
+ 'IndentationError',
+ 'IndexError',
+ 'InterruptedError',
+ 'IsADirectoryError',
+ 'KeyError',
+ 'KeyboardInterrupt',
+ 'LookupError',
+ 'MemoryError',
+ 'ModuleNotFoundError',
+ 'NameError',
+ 'None',
+ 'NotADirectoryError',
+ 'NotImplemented',
+ 'NotImplementedError',
+ 'OSError',
+ 'OverflowError',
+ 'PendingDeprecationWarning',
+ 'PermissionError',
+ 'ProcessLookupError',
+ 'RecursionError',
+ 'ReferenceError',
+ 'ResourceWarning',
+ 'RuntimeError',
+ 'RuntimeWarning',
+ 'StopAsyncIteration',
+ 'StopIteration',
+ 'SyntaxError',
+ 'SyntaxWarning',
+ 'SystemError',
+ 'SystemExit',
+ 'TabError',
+ 'TimeoutError',
+ 'True',
+ 'TypeError',
+ 'UnboundLocalError',
+ 'UnicodeDecodeError',
+ 'UnicodeEncodeError',
+ 'UnicodeError',
+ 'UnicodeTranslateError',
+ 'UnicodeWarning',
+ 'UserWarning',
+ 'ValueError',
+ 'Warning',
+ 'WindowsError',
+ 'ZeroDivisionError',
+ '__IPYTHON__',
+ '__build_class__',
+ '__debug__',
+ '__doc__',
+ '__import__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ 'abs',
+ 'aiter',
+ 'all',
+ 'anext',
+ 'any',
+ 'ascii',
+ 'bin',
+ 'bool',
+ 'breakpoint',
+ 'bytearray',
+ 'bytes',
+ 'callable',
+ 'chr',
+ 'classmethod',
+ 'compile',
+ 'complex',
+ 'copyright',
+ 'credits',
+ 'delattr',
+ 'dict',
+ 'dir',
+ 'display',
+ 'divmod',
+ 'enumerate',
+ 'eval',
+ 'exec',
+ 'execfile',
+ 'filter',
+ 'float',
+ 'format',
+ 'frozenset',
+ 'get_ipython',
+ 'getattr',
+ 'globals',
+ 'hasattr',
+ 'hash',
+ 'help',
+ 'hex',
+ 'id',
+ 'input',
+ 'int',
+ 'isinstance',
+ 'issubclass',
+ 'iter',
+ 'len',
+ 'license',
+ 'list',
+ 'locals',
+ 'map',
+ 'max',
+ 'memoryview',
+ 'min',
+ 'next',
+ 'object',
+ 'oct',
+ 'open',
+ 'ord',
+ 'pow',
+ 'print',
+ 'property',
+ 'range',
+ 'repr',
+ 'reversed',
+ 'round',
+ 'runfile',
+ 'set',
+ 'setattr',
+ 'slice',
+ 'sorted',
+ 'staticmethod',
+ 'str',
+ 'sum',
+ 'super',
+ 'tuple',
+ 'type',
+ 'vars',
+ 'zip']
+
+# przestrzen globalna
+
+Zadanie 09
+
+W sesji interaktywnego środowiska interpretera stwórz tuplę zawierającą 10 różnych liczb całkowitych. Korzystając z operatora dostępu oraz wycinania pobierz:
+
+    drugi element
+    przedostatni element
+    elementy od trzeciego do siódmego (włącznie)
+    co trzeci element
+    co drugi element licząc od końca
+
+tupla = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+tupla[1]
+
+2
+
+tupla[-2]
+
+9
+
+tupla[2:7]
+
+(3, 4, 5, 6, 7)
+
+tupla[::3]
+
+(1, 4, 7, 10)
+
+tupla[::-2]
+
+(10, 8, 6, 4, 2)
+
+x = tuple() # ()
+
+type(x)
+
+tuple
+
+x = (1)
+
+type(x)
+
+int
+
+x = (1,)
+type(x)
+
+tuple
+
+x
+
+(1,)
+
+[1, 2, 3, ]
+
+[1, 2, 3]
+
+list(tupla)
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+tuple([1, 2, 3, ])
+
+(1, 2, 3)
+
+lista = [1, 2]
+
+lista.append(3)
+
+lista
+
+[1, 2, 3]
+
+lista.insert(1, 4)
+
+lista
+
+[1, 4, 2, 3]
+
+lista.pop?
+
+lista.pop()
+
+3
+
+lista
+
+[1, 4, 2]
+
+lista.extend?
+
+lista.extend([4, 5, 6])
+
+lista
+
+[1, 4, 2, 4, 5, 6]
+
+lista + [7,8]
+
+[1, 4, 2, 4, 5, 6, 7, 8]
+
+lista
+
+[1, 4, 2, 4, 5, 6]
+
+lista.index(4,lista.index(4)+1)
+
+3
+
+lista.index(4, 1)
+
+1
+
+range
+
+list(range(10))
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+list(range(5, 16))
+
+[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+list(range(5, 16, 3))
+
+[5, 8, 11, 14]
+
+Petla for
+
+for el in lista:
+    print(el)
+
+1
+4
+2
+4
+5
+6
+
+for i in range(1, 6):
+    print(i ** 2)
+
+1
+4
+9
+16
+25
+
  
 
+a, b = 1, 2
 
+a, b, c = 1, 2
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/1121104675.py in <module>
+----> 1 a, b, c = 1, 2
+
+ValueError: not enough values to unpack (expected 3, got 2)
+
+xxx = [(1, 2), (3, 4), (5, 6)]
+
+for a, b in xxx:
+    print(a + b)
+
+3
+7
+11
+
+for i, el in enumerate(lista, start=3):
+    print(i, el)
+
+3 1
+4 4
+5 2
+6 4
+7 5
+8 6
+
+Zadanie 09
+
+Napisz program obliczający średnią wartość z podanych przez użytkownika liczba. Do przechowywania liczb użyj listy. Pozwól na wprowadzenie maksymalnie 10 liczb. Skorzystaj z funkcji wbudowanej sum() i len()
+
+#%%writefile zadanie_09.py
+dane = []
+
+for i in range(10):
+    operacja = input("Podaj liczbe lub k by zakonczyc: ")
+    if operacja == "k":
+        break
+    liczba = int(operacja)
+    dane.append(liczba)
+    
+print(sum(dane) / len(dane))
+
+Podaj liczbe lub k by zakonczyc: 1
+Podaj liczbe lub k by zakonczyc: 2
+Podaj liczbe lub k by zakonczyc: k
+1.5
+
+print?
+
+Zadanie 10
+
+Napisz program wypisujący na konsolę tabliczkę mnożenia dla liczb od 0 do 9 w postaci tabelki.
+
+       0    1    2    3    4    5    6    7    8    9
+
+0      0    0    0    0    0    0    0    0    0    0
+1      0    1    2    3    4    5    6    7    8    9
+2      0    2    4    6    8   10   12   14   16   18
+3      0    3    6    9   12   15   18   21   24   27
+4      0    4    8   12   16   20   24   28   32   36
+5      0    5   10   15   20   25   30   35   40   45
+6      0    6   12   18   24   30   36   42   48   54
+7      0    7   14   21   28   35   42   49   56   63
+8      0    8   16   24   32   40   48   56   64   72
+9      0    9   18   27   36   45   54   63   72   81
+
+#%%writefile zadanie_10.py
+print("     ", end="")
+for i in range(10):
+    print(f"{i:5}", end="")
+print()
+print()
+
+for i in range(10):
+    print(f"{i}    ", end="")
+    for j in range(10):
+        print(f"{i * j:5}", end="")
+    print()
+
+         0    1    2    3    4    5    6    7    8    9
+
+0        0    0    0    0    0    0    0    0    0    0
+1        0    1    2    3    4    5    6    7    8    9
+2        0    2    4    6    8   10   12   14   16   18
+3        0    3    6    9   12   15   18   21   24   27
+4        0    4    8   12   16   20   24   28   32   36
+5        0    5   10   15   20   25   30   35   40   45
+6        0    6   12   18   24   30   36   42   48   54
+7        0    7   14   21   28   35   42   49   56   63
+8        0    8   16   24   32   40   48   56   64   72
+9        0    9   18   27   36   45   54   63   72   81
+
+print?
+
+Zadanie 11
+
+Napisz program zamieniający miejscami w zadanej liście liczb element największy z najmniejszym.
+
+lista = [2, 3, 1, 5, 8, 10, 7]
+
+i_min = 0
+i_max = 0
+
+for i, v in enumerate(lista):
+    if v < lista[i_min]:
+        i_min = i
+    
+    if v > lista[i_max]:
+        i_max = i
+
+# temp = lista[i_max]
+# lista[i_max] = lista[i_min]
+# lista[i_min] = temp
+lista[i_min], lista[i_max] = lista[i_max], lista[i_min]
+
+lista
+
+[2, 3, 10, 5, 8, 1, 7]
+
+a, b = 1, 2
+
+a, b = b, a
+a, b = 2, 1
+
+lista = [2, 3, 1, 5, 8, 10, 7]
+
+
+for x in enumerate(lista):
+    print(x)
+
+(0, 2)
+(1, 3)
+(2, 1)
+(3, 5)
+(4, 8)
+(5, 10)
+(6, 7)
+
+i = 0
+for el in lista:
+    print((i, el))
+    i += 1
+
+(0, 2)
+(1, 3)
+(2, 1)
+(3, 5)
+(4, 8)
+(5, 10)
+(6, 7)
+
+napisy
+
+napis = "Ala ma kota"
+
+napis[::2]
+
+'Aam oa'
+
+for litera in napis:
+    print(litera.upper())
+
+A
+L
+A
+ 
+M
+A
+ 
+K
+O
+T
+A
+
+Zadanie 11
+
+Napisz program zliczający liczbę znaków w podanym przez użytkownika napisie pomiędzy nawiasami <>. Nawiasy mogę wystąpić tylko raz.
+
+Ala ma <kota>, a kot ma Alę
+4
+
+Ala ma <kota>, a <kot> ma Alę
+7
+
+text = "Ala ma <kota>, a <kot> ma Alę"
+
+licznik = 0
+zliczaj = False
+
+for znak in text:
+    if znak == "<":
+        zliczaj=True
+    elif znak == ">":
+        zliczaj=False
+    elif zliczaj:
+        licznik += 1
+        
+print(licznik)
+
+7
+
+Zadanie 12 (opt)
+
+Napisz program zliczający liczbę wystąpień samogłosek (a, e, i, o, u, y) w podanym przez użytkownika napisie.
+
+SAMOGLOSKI = "aeiouy"
+licznik = 0
+for znak in text.lower():
+    if znak in SAMOGLOSKI:
+        licznik += 1
+print(licznik)
+
+9
+
+"Ala" in text
+
+True
+
+Słownik
+
+dict() {} {klucz: wartosc}
+
+slownik = {"a": 1, "b": 2, 1: "a"}
+slownik
+
+{'a': 1, 'b': 2, 1: 'a'}
+
+slownik2 = dict(a=1, b=2, 1='a')
+
+  File "C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/2742704339.py", line 1
+    slownik2 = dict(a=1, b=2, 1='a')
+                              ^
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+
+slownik2 = dict(a=1, b=2)
+slownik2
+
+{'a': 1, 'b': 2}
+
+slownik2['a']
+
+1
+
+slownik2[1] = 'a'
+
+slownik2
+
+{'a': 1, 'b': 2, 1: 'a'}
+
+slownik3 = dict((('a', 1), ('b', 2), (1, 'a')))
+
+slownik3
+
+{'a': 1, 'b': 2, 1: 'a'}
+
+slownik3.keys()
+
+dict_keys(['a', 'b', 1])
+
+slownik3.values()
+
+dict_values([1, 2, 'a'])
+
+slownik3.items()
+
+dict_items([('a', 1), ('b', 2), (1, 'a')])
+
+slownik3['x']
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/1469910641.py in <module>
+----> 1 slownik3['x']
+
+KeyError: 'x'
+
+if 'x' in slownik3:
+    v = slownik3['x']
+
+for k in slownik3:
+    print(k)
+
+a
+b
+1
+
+v = slownik3.get('x')
+
+v is None
+
+True
+
+v = slownik3.get('x', 0)
+
+v
+
+0
+
+SAMOGLOSKI
+
+'aeiouy'
+
+licznik_samoglosek = {}
+
+for znak in text.lower():
+    if znak in SAMOGLOSKI:
+        licznik_samoglosek[znak] =  licznik_samoglosek.get(znak, 0) + 1
+        
+
+dir(licznik_samoglosek)
+
+['__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__ior__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__or__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__ror__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'clear',
+ 'copy',
+ 'fromkeys',
+ 'get',
+ 'items',
+ 'keys',
+ 'pop',
+ 'popitem',
+ 'setdefault',
+ 'update',
+ 'values']
+
+licznik_samoglosek.pop('a')
+
+14
+
+licznik_samoglosek
+
+{'o': 4}
+
+licznik_samoglosek.popitem?
+
+Zadanie 12
+
+Napisz program wyliczający kwotę należną za zakupiony towar na podstawie podanej przez użytkownika wagi i nazwy produktu. Do przechowywania informacji o cenie za kilogram danego produktu użyj słownika. Wypisz wszystkie dostępne produkty w sklepie.
+
+W naszym sklepiej oferujemy:
+    - marchew   - 1.23 PLN
+    - cebula    - 0.56 PLN
+    - ziemniaki - 1.11 PLN
+
+Co chcesz kupic?
+marchew
+
+ile chesz kupić? 1
+Cena: 1.23
+
+produkty = {
+    "marchew": 1.23,
+    "cebula": 0.56,
+    "ziemniaki": 1.11,
+}
+
+print("Oferta")
+# for produkt in produkty
+for produkt, cena in produkty.items():
+    print(f" - {produkt:20} - {cena:3.2f} PLN")
+
+pr = input("Co chcesz kupić? ")
+ile = float(input("Ile? "))
+
+cena = ile * produkty[pr]
+
+print("Należność:", cena)
+
+Oferta
+ - marchew              - 1.23 PLN
+ - cebula               - 0.56 PLN
+ - ziemniaki            - 1.11 PLN
+Co chcesz kupić? cebula
+Ile? 2
+Należność: 1.12
+
+Zbiór - set
+
+set()
+
+{1, 2}
+
+    unikalne wartosci
+    brak porzadku
+
+image.png
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# suma
+
+A | B
+
+{1, 2, 3, 4, 5, 6}
+
+# różnica
+
+A - B
+
+{1, 2}
+
+# iloczyn (część wspólna)
+
+A & B
+
+{3, 4}
+
+# różnica symetryczna
+A ^ B
+
+{1, 2, 5, 6}
+
+zbior = set() # pusty zbior
+
+zbior.add(1)
+
+zbior.add('a')
+
+zbior.add((1, 2))
+
+zbior.add([1, 2])
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+C:\Users\SZB345~1\AppData\Local\Temp/ipykernel_11844/1879852738.py in <module>
+----> 1 zbior.add([1, 2])
+
+TypeError: unhashable type: 'list'
+
+zbior
+
+{(1, 2), 1, 'a'}
+
+zbior.add(1)
+
+zbior
+
+{(1, 2), 1, 'a'}
+
+lista = [1, 1, 1, 2, 2, 2, 1, 1, 4, 3]
+
+set(lista)
+
+{1, 2, 3, 4}
+
+1 in zbior
+
+True
+
+for el in zbior:
+    print(el)
+
+1
+(1, 2)
+a
+
+dir(zbior)
+
+['__and__',
+ '__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__iand__',
+ '__init__',
+ '__init_subclass__',
+ '__ior__',
+ '__isub__',
+ '__iter__',
+ '__ixor__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__or__',
+ '__rand__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__ror__',
+ '__rsub__',
+ '__rxor__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__sub__',
+ '__subclasshook__',
+ '__xor__',
+ 'add',
+ 'clear',
+ 'copy',
+ 'difference',
+ 'difference_update',
+ 'discard',
+ 'intersection',
+ 'intersection_update',
+ 'isdisjoint',
+ 'issubset',
+ 'issuperset',
+ 'pop',
+ 'remove',
+ 'symmetric_difference',
+ 'symmetric_difference_update',
+ 'union',
+ 'update']
+
+Zadanie 14
+
+Napisz program zliczający liczbę unikalnych liczb wprowadzonych przez użytkownika. Sprawdź jak dużo z tych liczb jest liczbami parzystymi w zakresie 0-100 - w tym celu skorzystaj z operatora iloczynu.
+
+1 2 1 2 1 2
+
+range, set, input
+
+ 
 
