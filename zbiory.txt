@@ -1,0 +1,30 @@
+### zbiór - set
+
+set()
+- unikalne wartości
+- brak porządku
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+#suma
+A | B
+$
+#różnica
+A-B
+#iloczyn (część wspólna)
+A & B
+#różnica symetryczna
+A ^ B
+
+#zbiór pusty
+zbior = set()
+#dodanie do zbioru
+zbior.add(1)
+#dodam do zbioru tuple
+
+
+#listaa
+lista = [1, 1, 1, 2, 2, 2]
+set(lista)
+
+i in zbiór 
+wynik: True
