@@ -9,6 +9,10 @@ class vector:
     def _eq_(self, other):
         return self.x == other.x and self.y == other.y
 
+    def _mul_(self, other):
+        is isinstance(other, int)
+
+
     def _str_(self):
         return f"<Vector x:(self.x), y:(self.y)>"
 
